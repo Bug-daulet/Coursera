@@ -30,7 +30,7 @@ def create_post(request):
         permbajtja = request.POST.get('text')
         postim = Post(title=titulli, text=permbajtja, author=request.user)
         postim.save()
-        messages.success(request, f'Postimi u krijua me sukses.')
+        messages.success(request, f'Post added successfully')
         return redirect('blogs:post_list')
     return render(request, 'blog/create_post.html')
 
